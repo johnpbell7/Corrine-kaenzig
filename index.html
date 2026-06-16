@@ -796,19 +796,22 @@ fBtns.forEach(b=>b.addEventListener("click",()=>{
   }
   /* clear any leftover reveal transforms so Flip measures clean positions */
   gsap.set(cards,{clearProps:"opacity,transform,visibility"});
-  const startH=grid.offsetHeight;                         // height before filtering
+  const startH=grid.offsetHeight;
   const state=Flip.getState(cards);
   cards.forEach(c=>c.classList.toggle("hide",!match(c)));
-  const endH=grid.offsetHeight;                           // natural height after filtering
-  /* lock + animate the grid height so the section below glides instead of jumping
-     up behind the absolutely-positioned cards during the Flip */
-  gsap.set(grid,{height:startH});
-  gsap.to(grid,{height:endH,duration:.55,ease:"power3.inOut",
-    onComplete:()=>gsap.set(grid,{clearProps:"height"})});
+  const endH=grid.offsetHeight;
+  /* Hold the grid at full height for the ENTIRE Flip so the absolutely-positioned
+     cards are always contained and the section below can never slip behind them.
+     Once the cards have landed, settle the grid down to its new height. */
+  gsap.set(grid,{height:Math.max(startH,endH)});
   Flip.from(state,{duration:.55,ease:"power3.inOut",absolute:true,stagger:.02,
     onEnter:els=>gsap.fromTo(els,{opacity:0,scale:.9},{opacity:1,scale:1,duration:.45,ease:"power3.out"}),
     onLeave:els=>gsap.to(els,{opacity:0,scale:.9,duration:.25,ease:"power2.in"}),
-    onComplete:()=>{gsap.set(cards.filter(match),{clearProps:"transform"}); ScrollTrigger.refresh();}});
+    onComplete:()=>{
+      gsap.set(cards.filter(match),{clearProps:"transform"});
+      gsap.to(grid,{height:endH,duration:.35,ease:"power2.inOut",
+        onComplete:()=>{gsap.set(grid,{clearProps:"height"}); ScrollTrigger.refresh();}});
+    }});
 }));
 
 /* =========================================================================
