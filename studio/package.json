@@ -1,0 +1,25 @@
+{
+  "name": "corrine-kaenzig-studio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Sanity Studio — content backend for the Corrine Kaenzig portfolio",
+  "type": "module",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity dev",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "seed": "node scripts/seed.mjs"
+  },
+  "dependencies": {
+    "@sanity/orderable-document-list": "^2.1.7",
+    "@sanity/vision": "^3.57.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sanity": "^3.57.4",
+    "styled-components": "^6.1.13"
+  },
+  "devDependencies": {
+    "@sanity/client": "^6.21.3"
+  }
+}

@@ -30,9 +30,23 @@ All content is in the final `<script>` block in `index.html`:
 
 To add a project today you append one object to `PROJECTS` and add its image(s) to `window.IMG`. **This is exactly what the backend (below) will replace** so Corrine can do it without touching code.
 
-## Backend / CMS — in progress
+## Backend / CMS — Sanity (`studio/`)
 
-The goal: let Corrine **add, edit, reorder and delete** portfolio entries (and videos, images, logos, site details) through an admin UI — no code. The site will read its content from that backend instead of the hardcoded `PROJECTS` array. Architecture is being finalised; see the open discussion / next commits.
+Corrine edits content in a **Sanity Studio** (a friendly visual editor — add/edit/reorder/delete projects, drag images in, one-click publish). The site reads from Sanity with a **built-in fallback**, so it never breaks before it's configured.
+
+- All 18 existing entries (+ images, brand wordmarks, site settings) are imported by a one-time seed script — nothing is re-typed.
+- The git site stays exactly as-is; the only change is that `PROJECTS` / `IMG` / `LOGOS` can be sourced from Sanity. While `SANITY.projectId` in `index.html` is `""`, the site uses its inlined content (current behaviour).
+
+**Full setup, seeding and "go live" steps:** see [`studio/README.md`](studio/README.md).
+
+Quick version:
+```bash
+cd studio && npm install && npx sanity login && npx sanity init --env
+SANITY_API_TOKEN=<editor-token> npm run seed   # imports the 18 entries + assets
+npm run dev                                     # edit at localhost:3333
+npm run deploy                                  # hosted Studio URL for Corrine
+```
+Then set `projectId` in `index.html`, make the dataset public, and add the site's origin to CORS (all in the studio README).
 
 ## Brand / design tokens
 

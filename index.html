@@ -386,7 +386,7 @@ window.LOGOS = {"john-lewis":"data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//ww
              the overlay; any others appear above the stills gallery.
              (videoUrl is still honoured as a single-link shorthand.)
    ========================================================================= */
-const PROJECTS = [
+let PROJECTS = [
   { id:"barclays", brand:"Barclays", logo:"barclays", title:"This Is Me", role:"Art Director",
     discipline:"Art Director", year:"2023", images:["barclays","barclays_2"],
     videos:["https://vimeo.com/887918767/2426cf0948?share=copy","https://vimeo.com/873335451/1ba9d3bd6e?share=copy","https://vimeo.com/846655433/0a6bfa18d7?share=copy"],
@@ -486,6 +486,97 @@ const PROJECTS = [
     bullets:["Costume design for the format","Liaised with talent and producers","Styling and creative decisions on set","Sourcing and budget management"] },
 ];
 
+/* ===========================================================================
+   CONTENT SOURCE — Sanity (optional)
+   The arrays above are the built-in fallback. To serve content from Sanity
+   (so Corrine can edit/add entries), set SANITY.projectId below. While it is
+   "" the site behaves exactly as the static prototype. The fetch is synchronous
+   so the rest of the build stays unchanged; it runs behind the white intro.
+   Requirements once live: dataset visibility = public, and the site's origin
+   added to the project's CORS origins (see studio/README.md).
+   =========================================================================== */
+let CLI=["john-lewis","apple","samsung","barclays","next","fred-perry","paul-smith","benefit","loreal","burberry","matthew-williamson","itv","channel4","su2c","raasa","joyful","fantasy","matt-lucas"];
+let HERO_IDS=["presenter","barclays","matt-lucas","apple-watch","su2c","raasa"];
+let SETTINGS=null;
+
+const SANITY={ projectId:"", dataset:"production", apiVersion:"2024-01-01" };  // set projectId to go live
+
+(function loadSanity(){
+  if(!SANITY.projectId) return;
+  const groq=`{`+
+    `"projects":*[_type=="project"&&defined(slug.current)]|order(orderRank asc){`+
+      `"id":slug.current,brand,title,role,discipline,year,summary,bullets,videos,`+
+      `"images":images[].asset->url,"logo":logo.asset->url,featuredInHero},`+
+    `"settings":*[_type=="siteSettings"][0]{`+
+      `availability,contactEmail,phone,location,aboutLede,aboutBody,`+
+      `"aboutPhoto":aboutPhoto.asset->url,services,`+
+      `"clients":clients[]{name,"logo":logo.asset->url},`+
+      `"heroIds":heroProjects[]->slug.current}}`;
+  try{
+    const url=`https://${SANITY.projectId}.apicdn.sanity.io/v${SANITY.apiVersion}/data/query/${SANITY.dataset}?query=${encodeURIComponent(groq)}`;
+    const xhr=new XMLHttpRequest();
+    xhr.open("GET",url,false);
+    xhr.send();
+    if(xhr.status!==200) throw new Error("HTTP "+xhr.status);
+    const res=JSON.parse(xhr.responseText).result||{};
+    const sp=res.projects||[], st=res.settings||{};
+    if(!sp.length) throw new Error("no projects returned");
+    const IMG2={}, LOGOS2={};
+    PROJECTS=sp.map(p=>{
+      const imgs=(p.images||[]).filter(Boolean).map((u,i)=>{const k=p.id+"|img|"+i;IMG2[k]=u;return k;});
+      let logoKey=null; if(p.logo){logoKey=p.id+"|logo";LOGOS2[logoKey]=p.logo;}
+      return {id:p.id,brand:p.brand,title:p.title,role:p.role||"",discipline:p.discipline,
+              year:p.year||"",summary:p.summary||"",bullets:p.bullets||[],videos:p.videos||[],
+              images:imgs,logo:logoKey,featuredInHero:!!p.featuredInHero};
+    });
+    const cli=[]; (st.clients||[]).forEach((c,i)=>{ if(c&&c.logo){const k="cli|"+i;LOGOS2[k]=c.logo;cli.push(k);} });
+    if(st.aboutPhoto) IMG2.portrait=st.aboutPhoto;
+    window.IMG=IMG2; window.LOGOS=LOGOS2;
+    if(cli.length) CLI=cli;
+    if(st.heroIds&&st.heroIds.length) HERO_IDS=st.heroIds.filter(Boolean);
+    SETTINGS=st;
+    console.info("[Sanity] loaded "+PROJECTS.length+" projects.");
+  }catch(e){
+    console.warn("[Sanity] load failed — using built-in content.", e);
+  }
+})();
+
+(function applySettings(){
+  if(!SETTINGS) return;
+  try{
+    if(SETTINGS.availability){
+      document.querySelectorAll(".avail").forEach(a=>{
+        const dot=a.querySelector(".dot");
+        a.textContent=" "+SETTINGS.availability;
+        if(dot) a.insertBefore(dot,a.firstChild);
+      });
+    }
+    if(SETTINGS.contactEmail){
+      const m=document.querySelector(".contact .mail");
+      if(m&&m.childNodes[0]){ m.setAttribute("href","mailto:"+SETTINGS.contactEmail); m.childNodes[0].nodeValue=SETTINGS.contactEmail+" "; }
+      const fc=document.querySelector(".float-cta");
+      if(fc) fc.setAttribute("href",`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(SETTINGS.contactEmail)}&su=Project%20enquiry%20%E2%80%94%20Corrine%20Kaenzig`);
+    }
+    const rows=document.querySelectorAll(".contact-row > div");
+    if(rows[0]&&SETTINGS.phone){const a=rows[0].querySelector("a"); if(a){a.textContent=SETTINGS.phone;a.setAttribute("href","tel:"+SETTINGS.phone.replace(/\s+/g,""));}}
+    if(rows[1]&&SETTINGS.location){const t=rows[1].childNodes[rows[1].childNodes.length-1]; if(t) t.nodeValue=SETTINGS.location;}
+    if(SETTINGS.aboutLede){const el=document.querySelector(".about-lede"); if(el) el.textContent=SETTINGS.aboutLede;}
+    if(Array.isArray(SETTINGS.aboutBody)&&SETTINGS.aboutBody.length){
+      const lede=document.querySelector(".about-lede"), copy=lede&&lede.parentNode;
+      if(copy){
+        copy.querySelectorAll("p:not(.about-lede)").forEach(p=>p.remove());
+        const link=copy.querySelector(".about-link");
+        SETTINGS.aboutBody.slice().reverse().forEach(par=>{const p=document.createElement("p");p.textContent=par;copy.insertBefore(p,link);});
+      }
+    }
+    if(Array.isArray(SETTINGS.services)&&SETTINGS.services.length){
+      const list=document.querySelector(".svc-list");
+      if(list) list.innerHTML=SETTINGS.services.map((s,i)=>
+        `<div class="svc-item"><span class="si">${String(i+1).padStart(2,"0")}</span><div><h3>${s.title||""}</h3><p>${s.description||""}</p></div></div>`).join("");
+    }
+  }catch(e){ console.warn("[Sanity] settings apply failed.", e); }
+})();
+
 /* counts */
 document.getElementById("ct-all").textContent = PROJECTS.length;
 document.getElementById("ct-ad").textContent = PROJECTS.filter(p=>p.discipline==="Art Director").length;
@@ -508,13 +599,11 @@ grid.innerHTML = PROJECTS.map((p,i)=>`
     </div>
   </button>`).join("");
 
-/* clients wall */
-const CLI=["john-lewis","apple","samsung","barclays","next","fred-perry","paul-smith","benefit","loreal","burberry","matthew-williamson","itv","channel4","su2c","raasa","joyful","fantasy","matt-lucas"];
+/* clients wall (CLI is defined above so Sanity can swap it) */
 document.getElementById("cliWall").innerHTML = CLI.map(k=>`<div class="c"><img src="${LOGOS[k]}" alt=""/></div>`).join("");
 
 /* HERO deck — angled stack of project cards; front card cycles through projects.
-   Edit HERO_IDS to choose which projects cycle; back cards add depth. */
-const HERO_IDS=["presenter","barclays","matt-lucas","apple-watch","su2c","raasa"];
+   HERO_IDS is defined above so Sanity can swap it (uses featuredInHero / heroProjects). */
 const heroPicks=HERO_IDS.map(id=>PROJECTS.find(p=>p.id===id)).filter(Boolean);
 const deckFront=document.getElementById("deckFront");
 deckFront.insertAdjacentHTML("afterbegin", heroPicks.map((p,i)=>

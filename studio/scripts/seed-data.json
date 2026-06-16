@@ -1,0 +1,553 @@
+{
+  "projects": [
+    {
+      "id": "barclays",
+      "brand": "Barclays",
+      "logo": "barclays",
+      "title": "This Is Me",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2023",
+      "images": [
+        "barclays",
+        "barclays_2"
+      ],
+      "videos": [
+        "https://vimeo.com/887918767/2426cf0948?share=copy",
+        "https://vimeo.com/873335451/1ba9d3bd6e?share=copy",
+        "https://vimeo.com/846655433/0a6bfa18d7?share=copy"
+      ],
+      "summary": "A global, employee-led series of short films telling real stories across markets — from Harlem to Tokyo. Corrine held the visual direction end to end, keeping a cohesive, on-brand look across very different people, places and lighting.",
+      "bullets": [
+        "Oversaw visual direction across all markets",
+        "Kept films cohesive and on-brand",
+        "On-set styling and creative decisions",
+        "Managed assistants on set",
+        "Timeline and budget management"
+      ],
+      "orderRank": 0,
+      "featuredInHero": true
+    },
+    {
+      "id": "apple-watch",
+      "brand": "Apple × John Lewis",
+      "logo": "apple",
+      "title": "Apple Watch",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2024",
+      "images": [
+        "applewatch",
+        "applewatch_2"
+      ],
+      "videos": [
+        "https://drive.google.com/file/d/1qbiSWh_ByDgM-wQAV3xn3oTx5yHK_FXz/view?usp=sharing",
+        "https://drive.google.com/file/d/1W0F9IpaeVkY1sctb3q2CJB5O5JVbxsNq/view?usp=sharing",
+        "https://drive.google.com/file/d/1j-euVndZbkBjVaLattj49YcS3bOPbncS/view?usp=sharing",
+        "https://drive.google.com/file/d/14bcY11U_Wex08KFs13oeH0uoghCIculi/view?usp=sharing"
+      ],
+      "summary": "Paid social and video campaign built around the Apple Watch — directing the visual language from quiet morning routines through to outdoor movement, and making the styling and creative calls live on set.",
+      "bullets": [
+        "Directed the campaign's visual language",
+        "Set styling and creative decisions on set",
+        "Sourced props and clothing",
+        "Managed the set and assistants",
+        "Budget and timeline management"
+      ],
+      "orderRank": 1,
+      "featuredInHero": true
+    },
+    {
+      "id": "samsung",
+      "brand": "Samsung × John Lewis",
+      "logo": "samsung",
+      "title": "Whatever Your Personality",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2023",
+      "images": [
+        "samsung"
+      ],
+      "videos": [
+        "https://drive.google.com/file/d/13YkIAWRE7JCGVc780yutIkJ65adtuSgb/view?usp=sharing",
+        "https://drive.google.com/file/d/1HwChBZ1gGX-STrwA7F4XLl22pS6KHNvd/view?usp=sharing"
+      ],
+      "summary": "A multi-format campaign showing technology slotting naturally into real home life, running across social, web and out-of-home. Corrine directed the look and made the styling and set decisions in the moment.",
+      "bullets": [
+        "Directed the look across social, web and OOH",
+        "Live styling and set decisions",
+        "Sourced props and clothing",
+        "Client consultation for on-brand outcome",
+        "Budget management"
+      ],
+      "orderRank": 2,
+      "featuredInHero": false
+    },
+    {
+      "id": "off-to-uni",
+      "brand": "Apple × John Lewis",
+      "logo": "apple",
+      "title": "Off to Uni",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2023",
+      "images": [
+        "offtouni"
+      ],
+      "videos": [
+        "https://drive.google.com/file/d/1HQObz6cfBI_sPa40Fh-sfs7OlZyLox2A/view?usp=sharing"
+      ],
+      "summary": "A back-to-university campaign spanning social, web and OOH. The brief was warmth and usefulness — Corrine kept the visual direction consistent and on-brand across every format.",
+      "bullets": [
+        "Held visual direction across all formats",
+        "On-set creative decisions",
+        "Sourced props and clothing",
+        "Timeline management"
+      ],
+      "orderRank": 3,
+      "featuredInHero": false
+    },
+    {
+      "id": "williamson",
+      "brand": "John Lewis",
+      "logo": "john-lewis",
+      "title": "Matthew Williamson — Live Launch",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2024",
+      "images": [
+        "williamson"
+      ],
+      "videos": [
+        "https://m.facebook.com/johnlewisretail/videos/introducing-john-lewis-partners-matthew-williamson/389519592850840/"
+      ],
+      "summary": "A live product launch with designer Matthew Williamson. Corrine oversaw the visual direction and on-set styling, advising on how the collection should be portrayed and keeping the broadcast on-brand throughout.",
+      "bullets": [
+        "Visual direction for a live broadcast",
+        "Advised on how to portray the collection",
+        "On-set styling and creative decisions",
+        "Client consultation"
+      ],
+      "orderRank": 4,
+      "featuredInHero": false
+    },
+    {
+      "id": "benefit",
+      "brand": "Benefit",
+      "logo": "benefit",
+      "title": "Tinted Lip Campaign",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2024",
+      "images": [
+        "benefit"
+      ],
+      "videos": [
+        "https://www.instagram.com/reel/C6yVt1ThqBQ/"
+      ],
+      "summary": "A beauty campaign for Benefit's tinted lip range, with John Lewis. Corrine directed the visual outcome with the client and made the styling and prop calls to land a bright, cohesive, on-brand result.",
+      "bullets": [
+        "Directed the visual outcome with the client",
+        "Managed assistants on set",
+        "Styling and prop decisions",
+        "Kept every element on-brand"
+      ],
+      "orderRank": 5,
+      "featuredInHero": false
+    },
+    {
+      "id": "burberry",
+      "brand": "Burberry & L'Oréal",
+      "logo": "burberry",
+      "title": "Beauty Launches",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2024",
+      "images": [
+        "burberry"
+      ],
+      "videos": [
+        "https://vimeo.com/850518970/f5291e12d5?share=copy",
+        "https://vimeo.com/848382189/a5ecce2ab4?share=copy"
+      ],
+      "summary": "Beauty launch content for Burberry and L'Oréal, with John Lewis. Corrine oversaw the visual direction and styling, keeping every element cohesive and on-brand from concept through to capture.",
+      "bullets": [
+        "Oversaw visual direction",
+        "Styling and creative decisions",
+        "Sourced props and clothing",
+        "Concept-to-capture cohesion"
+      ],
+      "orderRank": 6,
+      "featuredInHero": false
+    },
+    {
+      "id": "asmr",
+      "brand": "John Lewis",
+      "logo": "john-lewis",
+      "title": "ASMR Baking Series",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2024",
+      "images": [
+        "asmr"
+      ],
+      "videos": [
+        "https://www.instagram.com/reel/Czo8scjB1Tu/",
+        "https://www.instagram.com/reel/Cz66drehjbN/",
+        "https://www.instagram.com/reel/C0M8y4sBLe5/",
+        "https://www.instagram.com/reel/C1PrvE0tACh/"
+      ],
+      "summary": "A festive ASMR baking series — a tactile, sound-led world of cakes, tables and textures. Corrine art-directed each scene to feel rich, warm and unmistakably on-brand.",
+      "bullets": [
+        "Art-directed a tactile, sound-led world",
+        "Set dressing and scene composition",
+        "Food and prop styling",
+        "Sourced props and clothing"
+      ],
+      "orderRank": 7,
+      "featuredInHero": false
+    },
+    {
+      "id": "gok-wan",
+      "brand": "John Lewis Live",
+      "logo": "john-lewis",
+      "title": "Summer with Gok Wan",
+      "role": "Art Director / Set Design",
+      "discipline": "Art Director",
+      "year": "2023",
+      "images": [
+        "gokwan"
+      ],
+      "summary": "A live summer showcase with Gok Wan for the ANYDAY range. Corrine designed and oversaw the set build, directed the visual look, and made the styling decisions on set across the broadcast.",
+      "bullets": [
+        "Designed and oversaw the set build",
+        "Directed the visual look",
+        "On-set styling and creative decisions",
+        "Timeline and budget management"
+      ],
+      "orderRank": 8,
+      "featuredInHero": false,
+      "videos": []
+    },
+    {
+      "id": "kat-louise",
+      "brand": "John Lewis Live",
+      "logo": "john-lewis",
+      "title": "Kat Farmer & Louise Roe",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2022",
+      "images": [
+        "jllive_xmas"
+      ],
+      "summary": "Seasonal live fashion edits with stylists Kat Farmer and Louise Roe. Corrine directed the visual look, sourced props and clothing, and kept each segment cohesive and on-brand.",
+      "bullets": [
+        "Directed the visual look for seasonal edits",
+        "Sourced props and clothing",
+        "Kept segments cohesive and on-brand",
+        "On-set creative decisions"
+      ],
+      "orderRank": 9,
+      "featuredInHero": false,
+      "videos": []
+    },
+    {
+      "id": "erica",
+      "brand": "John Lewis Live",
+      "logo": "john-lewis",
+      "title": "A/W with Erica Davies",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2023",
+      "images": [
+        "jllive_aw"
+      ],
+      "summary": "Autumn/winter live fashion content with Erica Davies, plus an 'Off to Uni' edit with Kat Farmer. Corrine oversaw the visual direction and styling, advising on how the season's pieces should read on camera.",
+      "bullets": [
+        "Oversaw visual direction and styling",
+        "Advised on how pieces read on camera",
+        "Sourced props and clothing",
+        "Set management"
+      ],
+      "orderRank": 10,
+      "featuredInHero": false,
+      "videos": []
+    },
+    {
+      "id": "raasa",
+      "brand": "Raasa",
+      "logo": "raasa",
+      "title": "Brand Campaign",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2025",
+      "images": [
+        "raasa",
+        "raasa_2"
+      ],
+      "summary": "Food art direction for the Raasa brand — composing warm, appetising tablescapes that hold together across formats. Corrine directed the visual outcome, sourced props and dressed every scene on brand.",
+      "bullets": [
+        "Composed warm, appetising tablescapes",
+        "Food styling and set dressing",
+        "Sourced props",
+        "Directed the visual outcome"
+      ],
+      "orderRank": 11,
+      "featuredInHero": true,
+      "videos": []
+    },
+    {
+      "id": "joyful",
+      "brand": "Joyful",
+      "logo": "joyful",
+      "title": "Brand Campaign",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2025",
+      "images": [
+        "joyful",
+        "joyful_2"
+      ],
+      "summary": "Brand campaign art direction for Joyful, including seasonal moments. Corrine directed a bright, characterful visual language and made the styling and set calls to keep it cohesive and on-brand.",
+      "bullets": [
+        "Directed a bright, characterful look",
+        "Set styling and seasonal moments",
+        "Sourced props and clothing",
+        "On-brand cohesion across the campaign"
+      ],
+      "orderRank": 12,
+      "featuredInHero": false,
+      "videos": []
+    },
+    {
+      "id": "next",
+      "brand": "Next",
+      "logo": "next",
+      "title": "Fred Perry × Paul Smith",
+      "role": "Stylist",
+      "discipline": "Stylist",
+      "year": "2022",
+      "images": [
+        "next_ecom",
+        "next_2"
+      ],
+      "summary": "Menswear e-commerce styling across two heritage brands, Fred Perry and Paul Smith. Corrine dressed full look ranges for studio capture with tight turnarounds and a consistent commercial finish.",
+      "bullets": [
+        "Styled full look ranges for two heritage brands",
+        "Studio e-commerce capture",
+        "Tight-turnaround consistency",
+        "On-set styling decisions"
+      ],
+      "orderRank": 13,
+      "featuredInHero": false,
+      "videos": []
+    },
+    {
+      "id": "presenter",
+      "brand": "ITV",
+      "logo": "itv",
+      "title": "Lorraine & Riddiculous",
+      "role": "Stylist",
+      "discipline": "Stylist",
+      "year": "2024",
+      "images": [
+        "presenter",
+        "presenter_2"
+      ],
+      "summary": "Weekly presenter and guest styling for daytime broadcast across The Lorraine Show and Riddiculous. Corrine built brand relationships to lend and gift clothing, sourced and collated weekly fashion features, and advised talent — all to budget.",
+      "bullets": [
+        "Liaised with presenters and producers",
+        "Built brand relationships to lend / gift clothing",
+        "Sourced and collated weekly fashion features",
+        "Advised talent and instructed assistants",
+        "Budget management"
+      ],
+      "orderRank": 14,
+      "featuredInHero": true,
+      "videos": []
+    },
+    {
+      "id": "su2c",
+      "brand": "Stand Up To Cancer",
+      "logo": "su2c",
+      "title": "Alan Carr & Maya Jama",
+      "role": "Celebrity Stylist",
+      "discipline": "Stylist",
+      "year": "2024",
+      "images": [
+        "su2c"
+      ],
+      "summary": "Celebrity styling for a live charity broadcast, dressing hosts including Alan Carr and Maya Jama. Corrine sourced costume and made styling calls on set, managing assistants and budget across a high-pressure live show.",
+      "bullets": [
+        "Celebrity styling for live broadcast",
+        "Costume sourcing",
+        "Styling and creative decisions on set",
+        "Managed assistants and budget"
+      ],
+      "orderRank": 15,
+      "featuredInHero": true,
+      "videos": []
+    },
+    {
+      "id": "matt-lucas",
+      "brand": "The Matt Lucas Prank Show",
+      "logo": "matt-lucas",
+      "title": "The Jokes On You",
+      "role": "Costume Designer",
+      "discipline": "Stylist",
+      "year": "2023",
+      "images": [
+        "matt_lucas",
+        "matt_lucas_2"
+      ],
+      "summary": "Character costume design, making and continuity for a hidden-camera prank format — disguises convincing enough to fool the public, then kept consistent across multiple shoot days and locations.",
+      "bullets": [
+        "Designed and made character costumes",
+        "Costume making and fittings",
+        "Continuity across shoot days",
+        "On-set styling decisions"
+      ],
+      "orderRank": 16,
+      "featuredInHero": true,
+      "videos": []
+    },
+    {
+      "id": "fantasy",
+      "brand": "Fantasy Football",
+      "logo": "fantasy",
+      "title": "Matt Lucas & Elis James",
+      "role": "Costume Design",
+      "discipline": "Stylist",
+      "year": "2023",
+      "images": [
+        "fantasy"
+      ],
+      "summary": "Costume design for an entertainment format hosted by Matt Lucas and Elis James. Corrine liaised with talent and producers, made styling and creative decisions on set, and managed sourcing and budget.",
+      "bullets": [
+        "Costume design for the format",
+        "Liaised with talent and producers",
+        "Styling and creative decisions on set",
+        "Sourcing and budget management"
+      ],
+      "orderRank": 17,
+      "featuredInHero": false,
+      "videos": []
+    }
+  ],
+  "settings": {
+    "availability": "Available 2025",
+    "contactEmail": "ckaenzig23@gmail.com",
+    "phone": "+44 7427 161 162",
+    "location": "United Kingdom — worldwide",
+    "aboutPhotoKey": "portrait",
+    "aboutLede": "I'm Corrine Kaenzig — a freelance stylist and art director focused on set styling and brand visual identity.",
+    "aboutBody": [
+      "After thirteen years in film and television, across both styling and costume, innovation and a sharp eye for detail now drive my art direction work — built over the last five years.",
+      "I believe the work should be concept-driven, with impact that lasts. Strategic, empathic, daring and playful, the goal is to spark genuine curiosity rather than just please the eye. Decisive planning and close client consultation keep the brand vision intact from first meeting to final delivery — on target and on budget."
+    ],
+    "services": [
+      {
+        "title": "Art Direction",
+        "description": "Visual direction and on-set creative for campaigns across broadcast, social, web and out-of-home."
+      },
+      {
+        "title": "Fashion Styling",
+        "description": "Editorial, e-commerce and presenter styling — sourcing, brand liaison and on-set decisions."
+      },
+      {
+        "title": "Costume Design",
+        "description": "Character costume, making and continuity for film and television formats."
+      },
+      {
+        "title": "Set Dressing",
+        "description": "Building and dressing sets, sourcing props and composing scenes that hold across formats."
+      },
+      {
+        "title": "Consulting",
+        "description": "Translating brand objectives into clear visual outcomes, on time and on budget."
+      }
+    ],
+    "clients": [
+      {
+        "key": "john-lewis",
+        "name": "John Lewis"
+      },
+      {
+        "key": "apple",
+        "name": "Apple"
+      },
+      {
+        "key": "samsung",
+        "name": "Samsung"
+      },
+      {
+        "key": "barclays",
+        "name": "Barclays"
+      },
+      {
+        "key": "next",
+        "name": "Next"
+      },
+      {
+        "key": "fred-perry",
+        "name": "Fred Perry"
+      },
+      {
+        "key": "paul-smith",
+        "name": "Paul Smith"
+      },
+      {
+        "key": "benefit",
+        "name": "Benefit"
+      },
+      {
+        "key": "loreal",
+        "name": "L'Oréal"
+      },
+      {
+        "key": "burberry",
+        "name": "Burberry"
+      },
+      {
+        "key": "matthew-williamson",
+        "name": "Matthew Williamson"
+      },
+      {
+        "key": "itv",
+        "name": "ITV"
+      },
+      {
+        "key": "channel4",
+        "name": "Channel 4"
+      },
+      {
+        "key": "su2c",
+        "name": "Stand Up To Cancer"
+      },
+      {
+        "key": "raasa",
+        "name": "Raasa"
+      },
+      {
+        "key": "joyful",
+        "name": "Joyful"
+      },
+      {
+        "key": "fantasy",
+        "name": "Fantasy Football"
+      },
+      {
+        "key": "matt-lucas",
+        "name": "The Matt Lucas Prank Show"
+      }
+    ],
+    "heroProjectIds": [
+      "presenter",
+      "barclays",
+      "matt-lucas",
+      "apple-watch",
+      "su2c",
+      "raasa"
+    ]
+  }
+}
