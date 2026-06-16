@@ -224,9 +224,10 @@ footer a:hover{color:var(--ink)}
 .m-video-box{position:relative;aspect-ratio:16/9;border-radius:10px;overflow:hidden;background:var(--ink);box-shadow:0 24px 60px -28px rgba(21,20,15,.5)}
 .m-video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .m-video.portrait .m-video-box{aspect-ratio:9/13;max-width:340px;margin-inline:auto;background:var(--bg-2)}
-.m-video figcaption{margin-top:9px;font-size:12px;color:var(--muted)}
-.m-video figcaption a{border-bottom:1px solid var(--line);padding-bottom:1px;transition:color .3s,border-color .3s}
-.m-video figcaption a:hover{color:var(--ink);border-color:var(--ink)}
+.m-video figcaption{margin-top:11px;font-size:12.5px;color:var(--muted);display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.m-video figcaption a{display:inline-flex;align-items:center;gap:6px;color:var(--ink);font-weight:500;border:1px solid var(--line);border-radius:100px;padding:6px 13px;transition:background .3s,color .3s,border-color .3s}
+.m-video figcaption a svg{width:11px;height:11px}
+.m-video figcaption a:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .m-videos{margin-top:clamp(30px,4vh,46px)}
 .m-videos h4{font-size:12.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-bottom:14px}
 .m-videos-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
@@ -830,22 +831,22 @@ function gallery(p, includeFirst){
 function videoEmbed(url){
   if(!url) return null; let m;
   if(m=url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/)|youtu\.be\/)([\w-]{11})/))
-    return {src:`https://www.youtube-nocookie.com/embed/${m[1]}`, kind:""};
+    return {src:`https://www.youtube-nocookie.com/embed/${m[1]}`, kind:"", name:"YouTube"};
   if(m=url.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/([0-9a-z]+))?/i))
-    return {src:`https://player.vimeo.com/video/${m[1]}${m[2]?`?h=${m[2]}`:""}`, kind:""};
+    return {src:`https://player.vimeo.com/video/${m[1]}${m[2]?`?h=${m[2]}`:""}`, kind:"", name:"Vimeo"};
   if(m=url.match(/drive\.google\.com\/file\/d\/([\w-]+)/))
-    return {src:`https://drive.google.com/file/d/${m[1]}/preview`, kind:""};
+    return {src:`https://drive.google.com/file/d/${m[1]}/preview`, kind:"", name:"Google Drive"};
   if(m=url.match(/instagram\.com\/(?:reel|reels|p|tv)\/([\w-]+)/))
-    return {src:`https://www.instagram.com/reel/${m[1]}/embed/`, kind:"portrait"};
+    return {src:`https://www.instagram.com/reel/${m[1]}/embed/`, kind:"portrait", name:"Instagram"};
   if(url.includes("facebook.com"))
-    return {src:`https://www.facebook.com/plugins/video.php?show_text=false&href=${encodeURIComponent(url.replace("m.facebook.com","www.facebook.com"))}`, kind:""};
+    return {src:`https://www.facebook.com/plugins/video.php?show_text=false&href=${encodeURIComponent(url.replace("m.facebook.com","www.facebook.com"))}`, kind:"", name:"Facebook"};
   return null;
 }
 function videoFrame(url,label){
   const e=videoEmbed(url); if(!e) return "";
   return `<figure class="m-video ${e.kind}">
     <div class="m-video-box"><iframe src="${e.src}" title="${label}" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-    <figcaption><a href="${url}" target="_blank" rel="noopener">Open original ↗</a></figcaption>
+    <figcaption><span>Video not playing?</span> <a href="${url}" target="_blank" rel="noopener">Watch on ${e.name} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M7 17 17 7M17 7H9M17 7v8"/></svg></a></figcaption>
   </figure>`;
 }
 function projectVideos(p){ return (p.videos&&p.videos.length)?p.videos:(p.videoUrl?[p.videoUrl]:[]); }
