@@ -1,34 +1,6 @@
 {
   "projects": [
     {
-      "id": "barclays",
-      "brand": "Barclays",
-      "logo": "barclays",
-      "title": "This Is Me",
-      "role": "Art Director",
-      "discipline": "Art Director",
-      "year": "2023",
-      "images": [
-        "barclays",
-        "barclays_2"
-      ],
-      "videos": [
-        "https://vimeo.com/887918767/2426cf0948?share=copy",
-        "https://vimeo.com/873335451/1ba9d3bd6e?share=copy",
-        "https://vimeo.com/846655433/0a6bfa18d7?share=copy"
-      ],
-      "summary": "A global, employee-led series of short films telling real stories across markets — from Harlem to Tokyo. Corrine held the visual direction end to end, keeping a cohesive, on-brand look across very different people, places and lighting.",
-      "bullets": [
-        "Oversaw visual direction across all markets",
-        "Kept films cohesive and on-brand",
-        "On-set styling and creative decisions",
-        "Managed assistants on set",
-        "Timeline and budget management"
-      ],
-      "orderRank": 0,
-      "featuredInHero": true
-    },
-    {
       "id": "apple-watch",
       "brand": "Apple × John Lewis",
       "logo": "apple",
@@ -54,7 +26,7 @@
         "Managed the set and assistants",
         "Budget and timeline management"
       ],
-      "orderRank": 1,
+      "orderRank": 0,
       "featuredInHero": true
     },
     {
@@ -80,8 +52,36 @@
         "Client consultation for on-brand outcome",
         "Budget management"
       ],
-      "orderRank": 2,
+      "orderRank": 1,
       "featuredInHero": false
+    },
+    {
+      "id": "barclays",
+      "brand": "Barclays",
+      "logo": "barclays",
+      "title": "This Is Me",
+      "role": "Art Director",
+      "discipline": "Art Director",
+      "year": "2023",
+      "images": [
+        "barclays",
+        "barclays_2"
+      ],
+      "videos": [
+        "https://vimeo.com/887918767/2426cf0948?share=copy",
+        "https://vimeo.com/873335451/1ba9d3bd6e?share=copy",
+        "https://vimeo.com/846655433/0a6bfa18d7?share=copy"
+      ],
+      "summary": "A global, employee-led series of short films telling real stories across markets — from Harlem to Tokyo. Corrine held the visual direction end to end, keeping a cohesive, on-brand look across very different people, places and lighting.",
+      "bullets": [
+        "Oversaw visual direction across all markets",
+        "Kept films cohesive and on-brand",
+        "On-set styling and creative decisions",
+        "Managed assistants on set",
+        "Timeline and budget management"
+      ],
+      "orderRank": 2,
+      "featuredInHero": true
     },
     {
       "id": "off-to-uni",

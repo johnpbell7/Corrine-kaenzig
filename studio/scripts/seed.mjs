@@ -45,13 +45,16 @@ function dataUriToBuffer(uri) {
 }
 
 const assetCache = new Map()
-async function uploadFromMap(map, key) {
+// ns ("img" / "logo") namespaces the cache so a client-logo key and a project-image
+// key with the same name (e.g. "samsung") don't collide onto the same asset.
+async function uploadFromMap(map, key, ns) {
   if (!key || !map[key]) return null
-  if (assetCache.has(key)) return assetCache.get(key)
+  const ck = ns + ':' + key
+  if (assetCache.has(ck)) return assetCache.get(ck)
   const {buffer, ext} = dataUriToBuffer(map[key])
-  const asset = await client.assets.upload('image', buffer, {filename: `${key}.${ext}`})
-  assetCache.set(key, asset._id)
-  console.log(`  uploaded ${key} -> ${asset._id}`)
+  const asset = await client.assets.upload('image', buffer, {filename: `${ns}-${key}.${ext}`})
+  assetCache.set(ck, asset._id)
+  console.log(`  uploaded ${ns}:${key} -> ${asset._id}`)
   return asset._id
 }
 
@@ -63,19 +66,19 @@ async function run() {
   for (const p of projects) {
     const refs = []
     for (let i = 0; i < (p.images || []).length; i++) {
-      const id = await uploadFromMap(IMG, p.images[i])
+      const id = await uploadFromMap(IMG, p.images[i], 'img')
       const ref = imageRef(id, `${p.id}-img-${i}`)
       if (ref) refs.push(ref)
     }
     p._imageRefs = refs
-    p._logoRef = p.logo ? imageRef(await uploadFromMap(LOGOS, p.logo), `${p.id}-logo`) : null
+    p._logoRef = p.logo ? imageRef(await uploadFromMap(LOGOS, p.logo, 'logo'), `${p.id}-logo`) : null
   }
 
   console.log('Uploading client logos...')
   for (const c of settings.clients) {
-    c._logoRef = imageRef(await uploadFromMap(LOGOS, c.key), `cli-${c.key}`)
+    c._logoRef = imageRef(await uploadFromMap(LOGOS, c.key, 'logo'), `cli-${c.key}`)
   }
-  const aboutPhotoId = await uploadFromMap(IMG, settings.aboutPhotoKey)
+  const aboutPhotoId = await uploadFromMap(IMG, settings.aboutPhotoKey, 'img')
 
   console.log('Writing project documents...')
   const tx = client.transaction()
