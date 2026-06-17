@@ -4,7 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {orderableDocumentListDeskItem} from '@sanity/orderable-document-list'
 import {schemaTypes} from './schemas'
 
-const projectId = process.env.SANITY_STUDIO_PROJECT_ID as string
+const projectId = process.env.SANITY_STUDIO_PROJECT_ID || 'mmpvq40b'
 const dataset = process.env.SANITY_STUDIO_DATASET || 'production'
 
 export default defineConfig({
